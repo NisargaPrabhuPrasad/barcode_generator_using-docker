@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Barcode Generator</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+
+</head>
+<body>
+    <h2>Enter data to generate Barcode:</h2>
+    <form method="POST">
+        <input type="text" name="data" required>
+        <button type="submit">Generate</button>
+    </form>
+
+    {% if barcode_path %}
+        <h3>Generated Barcode:</h3>
+        <img src="{{ barcode_path }}" alt="Barcode">
+    {% endif %}
+</body>
+</html>
